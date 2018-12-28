@@ -57,7 +57,11 @@ class Grid {
     return subgrids.count
   }
   
-  init() {
-    subgrids = [SubGrid]()
+  // variadic type initializer
+  init(_ subgrids: SubGrid...) {
+    self.subgrids = [SubGrid]()
+    for subgrid in subgrids {
+      self.subgrids.append(subgrid)
+    }
   }
 }
