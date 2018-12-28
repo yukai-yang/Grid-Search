@@ -6,12 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXFileReference section */
+		FD7E8C8621D6B2C100458016 /* grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = grid.swift; path = src/grid.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		FD7E8C7D21D68F8500458016 = {
 			isa = PBXGroup;
 			children = (
+				FD7E8C8621D6B2C100458016 /* grid.swift */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
 		};
 /* End PBXGroup section */
 
@@ -59,7 +67,7 @@
 				FD7E8C8321D68F8500458016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
