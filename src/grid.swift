@@ -53,8 +53,8 @@ class SubGrid {
 class Grid {
   var subgrids: [SubGrid]
   
-  // get the dimension of the grid
-  var dim: Int {
+  // get the number of parameters or arguments
+  var npar: Int {
     return subgrids.count
   }
   
@@ -79,8 +79,9 @@ class Grid {
       return subgrids[ind]
     }
     set{
-      assert(newValue is SubGrid, "Invalid input value, need SubGrid")
-      
+      if newValue.count == 0 {
+        assertionFailure("Don't input empty SubGrid!")
+      }
       if indexIsValid(ind: ind) {
         subgrids[ind] = newValue
       }else if ind == self.dim {
