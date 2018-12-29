@@ -70,6 +70,8 @@ class Grid {
   }
   
   // subscript
+  // makes it possible to do "var subgrid = grid[ind]"
+  // and "grid[ind] = subgrid"
   subscript(_ ind: Int) -> SubGrid {
     get{
       assert(indexIsValid(ind: ind), "Index out of range!")
