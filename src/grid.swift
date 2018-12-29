@@ -25,11 +25,12 @@ class SubGrid {
   
   // by giving a Double array
   init(points: [Double]) {
-    self.points = points.sort()
+    self.points = points
+    self.points.sort()
   }
   
   // from to and by
-  init(from:Double, to:Double, by:Double) {
+  convenience init(from:Double, to:Double, by:Double) {
     self.init()
     var tmp = from
     repeat {
@@ -40,8 +41,8 @@ class SubGrid {
   }
   
   // from to and length
-  init(from:Double, to:Double, length:Int) {
-    let by = (to - from)/length
+  convenience init(from:Double, to:Double, length:Int) {
+    let by = (to - from)/Double(length)
     self.init(from:from, to:to, by:by)
   }
 }
