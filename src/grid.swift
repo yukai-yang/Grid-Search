@@ -64,4 +64,27 @@ class Grid {
       self.subgrids.append(subgrid)
     }
   }
+  
+  func indexIsValid(ind: Int) -> Bool {
+    return ind >= 0 && ind < self.dim
+  }
+  
+  // subscript
+  subscript(_ ind: Int) -> SubGrid {
+    get{
+      assert(indexIsValid(ind: ind), "Index out of range!")
+      return subgrids[ind]
+    }
+    set{
+      assert(newValue is SubGrid, "Invalid input value, need SubGrid")
+      
+      if indexIsValid(ind: ind) {
+        subgrids[ind] = newValue
+      }else if ind == self.dim {
+        subgrids.append(newValue)
+      }else {
+        assertionFailure("Index out of range!")
+      }
+    }
+  }
 }
